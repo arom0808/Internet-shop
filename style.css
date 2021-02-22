@@ -1,0 +1,119 @@
+@font-face {
+    font-family: VlaShu;
+    src: url("fonts/VlaShu.otf") format("opentype");
+}
+
+#shopping-arsenal {
+    font-family: VlaShu;
+    font-max-size: larger;
+    font-size: xxx-large;
+}
+
+#header-sale {
+    font-family: sans-serif;
+    color: orange;
+    font-size: larger;
+}
+
+.in-header-line-contained {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+main {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+input {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 8px 21px 0px rgba(0, 0, 0, 0.13);
+}
+
+body {
+    margin: 0px;
+}
+
+.shop-path {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.product-wrapper {
+    border: 1px solid #b5e9a7;
+    border-radius: 3px;
+    position: relative;
+    background: #fff;
+    margin: 0 20px 20px 0;
+    color: #474747;
+}
+
+.product {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: text-bottom;
+    height: 100%;
+    width: 100%;
+}
+.product-text{
+
+
+
+
+}
+.product-img {
+    width: 100%;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 100%;
+}
+
+.header-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    align-items: center;
+}
+
+#phone-img {
+    height: 1em;
+}
+
+#in-header-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#login-button {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.header-line#first-line {
+    background-color: darkgreen;
+    height: 5em;
+}
+
+.header-line#second-line {
+    background-color: orange;
+    height: 2em;
+}
+
+.header-line#third-line {
+    background-color: white;
+    color: black;
+}
