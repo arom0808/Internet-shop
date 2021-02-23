@@ -7,6 +7,5 @@ function onProductsResize(){
     let productsRowWidth=parseInt(products.clientWidth*0.8/150);
     if(productsRowWidth==0)
         productsRowWidth=1;
-    console.log(productsRowWidth);
     products.style.gridTemplateColumns="repeat("+productsRowWidth.toString()+",1fr)"
 }
