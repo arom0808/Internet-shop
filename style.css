@@ -5,31 +5,42 @@
 
 #shopping-arsenal {
     font-family: VlaShu;
-    font-max-size: larger;
-    font-size: xxx-large;
+    /*font-max-size: 300%;*/
+    font-size: 4vw;
 }
-footer{
+
+footer {
     display: grid;
     background-color: #333;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 3fr 2fr repeat(7,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 3fr 2fr repeat(7, 1fr);
     padding: 5% 10%;
     text-align: center;
     color: white;
+    word-wrap: break-word;
 }
-.footer-text{
-    margin: 0.25em;
-    font-size: 1.25em;
+
+.noDecorationLink {
+    text-decoration: none;
+    color: black;
 }
-.footer-a{
+
+.footer-text {
+    margin: 0.25vw;
+    font-size: 1.25vw;
+}
+
+.footer-a {
     color: white;
-    margin: 0.25em;
+    margin: 0.25vw;
     text-decoration: none;
     text-align: justify;
 }
+
 .footer-a:hover {
     color: orange;
 }
+
 #header-sale {
     font-family: sans-serif;
     color: orange;
@@ -37,23 +48,26 @@ footer{
 }
 
 .in-header-line-contained {
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    text-decoration: none;
+    color: black;
 }
 
 main {
     padding: 5% 10%;
+    background-color: white;
+    color: black;
 }
 
 input {
-    margin-bottom: 1em;
-    margin-top: 1em;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
 }
 
 header {
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 8px 21px 0px rgba(0, 0, 0, 0.13);
 }
 
 body {
@@ -63,37 +77,110 @@ body {
 .shop-path {
     padding-left: 10%;
     padding-right: 10%;
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.6) inset;
+    color: black;
+    background-color: white;
 }
 
-.product-wrapper {
+.products-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: fit-content;
+}
+
+.product-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 3px;
+    /*margin: 0 20px 20px 0;*/
+    text-decoration: none;
+    vertical-align: text-bottom;
+    color: black;
+    background-color: white;
+    padding: 1%;
+    margin-top: 2%;
+}
+.product-img {
+    width: 10%;
+    margin:1%;
+}
+.product-cost{
+    margin:1%;
+    font-size: large;
+}
+.product-text {
+    margin:1%;
+}
+
+.product-category-wrapper {
     display: block;
     border: 1px solid grey;
     border-radius: 3px;
-    /*position: relative;*/
-    /*background: #fff;*/
     margin: 0 20px 20px 0;
-    /*color: #474747;*/
-    /*width: 100%;*/
     text-decoration: none;
     text-align: center;
     vertical-align: text-bottom;
     color: black;
-    /*height: 100%;*/
-    /*width: 100%;*/
+    background-color: white;
 }
-.product-text{
+
+.product-category-text {
     bottom: 0px;
 }
-.product-img {
+
+.product-category-img {
     width: 100%;
 }
 
-.products-container {
+.products-categories-container {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
 }
 
+.products-container {
+    display: flex;
+    flex-direction: column;
+    /*margin-left: 10%;*/
+    /*margin-right: 10%;*/
+}
+#product-name{
+    font-size: larger;
+    padding: 1% 10%;
+}
+
+.product-container{
+    display: grid;
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 2% 0%;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas:
+        "photo nothing cost"
+        "photo nothing buy-button";
+}
+#product-photo{
+    grid-area: photo;
+    width: 50%;
+}
+#product-cost{
+    grid-area: cost;
+    text-align: right;
+    font-size: 2em;
+    padding-right: 5%;
+}
+#product-buy-button{
+    grid-area: buy-button;
+    border: none;
+    font-size: 100%;
+    align-content: center;
+    margin: 2%;
+}
 .header-line {
     display: flex;
     flex-direction: row;
@@ -106,6 +193,21 @@ body {
 
 #phone-img {
     height: 1em;
+}
+
+#theme {
+    height: 100%;
+    width: auto;
+    border: medium none;
+    float: left;
+    background: transparent none;
+    outline: none;
+    text-decoration: none;
+}
+
+#theme-icon {
+    height: 100%;
+    width: auto;
 }
 
 #in-header-line {
@@ -126,7 +228,6 @@ body {
 
 .header-line#second-line {
     background-color: orange;
-    height: 2em;
 }
 
 .header-line#third-line {
