@@ -191,6 +191,41 @@ body {
     align-items: center;
 }
 
+.cart-wrapper{
+    display: grid;
+    border: 1px solid grey;
+    border-radius: 3px;
+    margin: 1%;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas:
+        "photo summary-cost count-input"
+        "photo nothing delete-button";
+}
+
+#product-summary-cost{
+    grid-area: summary-cost;
+}
+.arrow-button-img{
+    width: 50%;
+}
+#product-count-input{
+    display: flex;
+    justify-content: space-between;
+    grid-area: count-input;
+    width: 100%;
+    height: 100%;
+}
+#product-delete-button{
+    grid-area: delete-button;
+}
+
+#cart-container{
+    margin:5% 1%;
+    display: flex;
+    flex-direction: column;
+}
+
 #phone-img {
     height: 1em;
 }

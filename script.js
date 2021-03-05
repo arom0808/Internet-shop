@@ -108,6 +108,19 @@ function getAllUrlParams(url) {
 function onCartLoad() {
     if (localStorage.getItem("cart") === null)
         localStorage.setItem("cart", "[]");
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    cart.forEach(function (cartElement) {
+        let productCategory, product;
+        productsCategories.forEach(function(prdCategory){
+            if(prdCategory["id"]===cartElement["productCategoryId"])
+                productCategory=prdCategory;
+        });
+        productCategory["products"].forEach(function (prd){
+            if(prd["id"]===cartElement["productId"])
+                product=prd;
+        });
+        document.getElementById("cart-container").innerHTML+="<div class=\"cart-wrapper\"><img id=\"product-photo\" src=\"img/"+productCategory["id"]+"/"+product["id"]+".png\"><div id=\"product-summary-cost\">"+(product["cost"]*cartElement["count"]).toString()+"₽</div><div id=\"product-count-input\"> <button><img class=\"arrow-button-img\" id=\"left-arrow-button-img\" src=\"img/left-black-arrow.png\"></button><div>5</div><button><img class=\"arrow-button-img\" id=\"right-arrow-button-img\" src=\"img/right-black-arrow.png\"></button> </div></div>";
+    });
     localStorage.getItem("theme") === "dark" ? changeTheme() : setCurrentTheme();
 }
 
@@ -128,11 +141,11 @@ function onBuyButtonClicked() {
         });
     localStorage.setItem("cart", JSON.stringify(cart));
     document.getElementById("product-buy-button").remove();
-    let buyButton=document.createElement("a");
-    buyButton.setAttribute("href","cart.html");
-    buyButton.setAttribute("class","noDecorationLink");
-    buyButton.setAttribute("id","product-buy-button");
-    buyButton.innerText="Куплено, перейти в корзину";
+    let buyButton = document.createElement("a");
+    buyButton.setAttribute("href", "cart.html");
+    buyButton.setAttribute("class", "noDecorationLink");
+    buyButton.setAttribute("id", "product-buy-button");
+    buyButton.innerText = "Куплено, перейти в корзину";
     document.getElementsByClassName("product-container")[0].appendChild(buyButton);
     setCurrentTheme();
 }
@@ -157,15 +170,15 @@ function onProductLoad() {
     document.getElementById("product-photo").setAttribute("src", "img/" + productsCategory["id"] + "/" + product["id"] + ".png");
     document.getElementById("product-photo").setAttribute("alt", product["id"] + ".png");
     document.getElementById("product-cost").innerText = product["cost"] + "₽";
-    if(!isInCart)
+    if (!isInCart)
         document.getElementById("product-buy-button").setAttribute("onclick", "onBuyButtonClicked()");
     else {
         document.getElementById("product-buy-button").remove();
-        let buyButton=document.createElement("a");
-        buyButton.setAttribute("href","cart.html");
-        buyButton.setAttribute("class","noDecorationLink");
-        buyButton.setAttribute("id","product-buy-button");
-        buyButton.innerText="Куплено, перейти в корзину";
+        let buyButton = document.createElement("a");
+        buyButton.setAttribute("href", "cart.html");
+        buyButton.setAttribute("class", "noDecorationLink");
+        buyButton.setAttribute("id", "product-buy-button");
+        buyButton.innerText = "Куплено, перейти в корзину";
         document.getElementsByClassName("product-container")[0].appendChild(buyButton);
     }
     localStorage.getItem("theme") === "dark" ? changeTheme() : setCurrentTheme();
